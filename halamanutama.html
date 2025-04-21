@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dunia Impian Abiyan</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #09cfed;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .robot-text {
+      display: inline-block;
+      padding: 20px;
+      margin: 10px;
+      background: #111;
+      border: 2px solid #06def1;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffcc;
+      transform: rotate(-2deg);
+    }
+
+    #typing {
+      font-size: 1.3em;
+      margin: 40px 0;
+      height: 60px;
+      overflow: hidden;
+    }
+
+    input {
+      padding: 10px;
+      width: 300px;
+      font-size: 1em;
+      background: #000;
+      color: #01d9f6;
+      border: 2px solid hsl(189, 97%, 48%);
+      border-radius: 8px;
+      outline: none;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #04e1fa;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #00ffcc;
+    }
+
+    iframe {
+      margin-top: 30px;
+      width: 560px;
+      height: 315px;
+      border: none;
+      box-shadow: 0 0 25px #00ffcc;
+      border-radius: 15px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1 class="robot-text">[ 🤖 Robot Z ]</h1>
+  <h1 class="robot-text">[ 🤖 Robot M ]</h1>
+  <h1 class="robot-text">[ 🤖 Robot F ]</h1>
+
+  <div id="typing"></div>
+
+  <input id="impian" type="text" placeholder="Apa impianmu, Abiyan?">
+  <br>
+  <button onclick="tampilkanImpian()">Wujudkan Impian 🌟</button>
+
+  <div id="hasil" style="margin-top: 20px;"></div>
+
+  <iframe src="image/happy.mp3" title=" Ucapan Ulang Tahun Futuristik" allowfullscreen></iframe>
+
+  <script>
+    const teks = "Selamat datang di dunia masa depan, Abiyan. Robot-robot telah menantimu...";
+    let i = 0;
+    function ketik() {
+      if (i < teks.length) {
+        document.getElementById("typing").innerHTML += teks.charAt(i);
+        i++;
+        setTimeout(ketik, 60);
+      }
+    }
+    ketik();
+
+    function tampilkanImpian() {
+      const impian = document.getElementById("impian").value;
+      if (impian) {
+        document.getElementById("hasil").innerHTML = `<p>✨ Impianmu "<strong>${impian}</strong>" telah tercatat dalam sistem galaksi robotik. Suatu hari akan jadi kenyataan! 🚀</p>`;
+      } else {
+        document.getElementById("hasil").innerHTML = `<p style="color:red;">Tolong ketik dulu impianmu ya, Abiyan 😄</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>
